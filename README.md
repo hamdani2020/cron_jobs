@@ -25,4 +25,9 @@ The cron job will run the script at a specific interval, ensuring automated mana
 2. Set up a cron job to run the script at scheduled intervals.
 
 ## Steps
-*Step 1: Create the Python Script*
+**Step 1: Create the Python Script**
+1. Open your terminal and create a directory to store the Python script:
+```
+mkdir ~/cron_jobs
+cd ~/cron_jobs
+```
