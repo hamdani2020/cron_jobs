@@ -36,3 +36,51 @@ cd ~/cron_jobs
 nvim manage_service.py
 ```
 3. Add the following code to `manage_service.py` code available at [manage_service](manage_service.py)
+4. Save and close the file:
+    - In Neovim, press `:wq` and `ENTER`
+
+**Step 2: Make the Script Executable**
+1. Make the Python script executable:
+```
+chmod +x manage_service.py
+```
+**Step 3: Test the Script**
+1. Run the script manually to ensure that it works as expected:
+```
+python3 manage_service.py
+```
+**Step 4: Set Up the Cron Job**
+1. Install crontab using pip:
+```
+pip3 install python-crontab
+```
+2. Open the crontab with your preferred edior:
+```
+crontab -e
+```
+3. Add the following cron job entry:
+```
+0 2 * * * /usr/bin/python3 /home/your_username/cron_jobs/manage_service.py >> /home/your_username/cron_jobs/cron_log.txt 2>&1
+```
+- Where:
+    - `0 2 * * *`: Specifies that the job will run daily at 2:00 AM.
+    - `/usr/bin/python3`: The path to the Python3 interpreter (adjust this if Python is installed elsewhere).
+    - `/home/your_username/cron_jobs/manage_service.py`: The full path to the Python script.
+    - `>> /home/your_username/cron_jobs/cron_log.txt`: Appends both standard output and error messages to `cron_log.txt` for logging
+    - `2>&1`: Redirects error messages to the same file as standard output
+4. Save and close the crontab
+
+**Step 5: Verify the Cron Job**
+1. List all cron jobs to confirm the new entry is saved:
+```
+crontab -l
+```
+2. Check the log file after the scheduled time to verify that the script ran:
+```
+cat /home/your_username/cron_jobs/cron_log.txt
+```
+
+
+
+
+
