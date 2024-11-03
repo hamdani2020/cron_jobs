@@ -8,7 +8,6 @@ This provides a step-by-step guide to setting up a Python script as a cron job o
 
 The cron job will run the script at a specific interval, ensuring automated management of the system service and cleanup of temporary files.
 
----
 
 ## Prerequisites
 
@@ -17,9 +16,13 @@ The cron job will run the script at a specific interval, ensuring automated mana
 - Sufficient permissions to manage services and set up cron jobs
 - Basic knowledge of cron and Python scripting
 
----
 
 ## Objectives
 
-1 Create a Python script that:
+1. Create a Python that:
+    - Restarts a system service
+    - Clears a specified temporary folder.
+2. Set up a cron job to run the script at scheduled intervals.
 
+## Steps
+*Step 1: Create the Python Script*
