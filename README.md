@@ -31,3 +31,8 @@ The cron job will run the script at a specific interval, ensuring automated mana
 mkdir ~/cron_jobs
 cd ~/cron_jobs
 ```
+2. Create a new Python file (You can use any text editor but I'm using Neovim): 
+```
+nvim manage_service.py
+```
+3. Add the following code to `manage_service.py` code available at [manage_service](manage_service.py)
